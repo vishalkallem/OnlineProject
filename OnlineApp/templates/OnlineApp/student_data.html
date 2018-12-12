@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Data</title>
+    {% load static %}
+    <link rel="stylesheet" type=text/css href="{% static 'OnlineApp/style.css' %}" />
+</head>
+<body>
+    <table cellpadding="5px">
+        <caption><b>Students Data</b></caption>
+        <tr>
+            <th>Student Name</th>
+            <th>Email Id</th>
+            <th>Acronym</th>
+        </tr>
+        <tr>
+            <td> {{ student_data.name }} </td>
+            <td> {{ student_data.email }} </td>
+            <td> {{ student_data.college__acronym }} </td>
+        </tr>
+    </table>
+</body>
+</html>

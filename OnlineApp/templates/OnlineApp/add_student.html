@@ -1,0 +1,14 @@
+{% extends 'OnlineApp/_base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1><b>Add Student</b></h1>
+        <form method = "post">
+            {% csrf_token %}
+            {{ student_form.as_p }}
+            {{ test_form.as_p }}
+        <hr>
+        <input type="submit" class="btn btn-success" value = "Submit"/>
+        </form>
+    </div>
+{% endblock %}

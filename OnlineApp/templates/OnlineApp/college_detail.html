@@ -1,0 +1,31 @@
+{% extends 'OnlineApp/_base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h3 id="caption"><b>Students of {{ college.name }}</b></h3>
+        <table cellpadding="5px" class="table table-bordered">
+            {% if 'OnlineApp.add_student' in user_permissions %}
+                <a href="{% url 'OnlineApp:add_student' college_id=college.id %}" class="btn btn-default">+ Add Student</a>
+            {% endif %}
+            <tr>
+                <th>Student ID</th>
+                <th>Student Name</th>
+                <th>Total</th>
+                {% if 'OnlineApp.change_student' in user_permissions or 'OnlineApp.delete_student' in user_permissions %}
+                <th>Actions</th>
+                {% endif %}
+            </tr>
+            {% for student in students %}
+            <tr>
+                <td> {{ student.id }} </td>
+                <td id="student_name"> {{ student.name }} </td>
+                <td> {{ student.mocktest1.total }}</td>
+                {% if 'OnlineApp.change_college' in user_permissions and 'OnlineApp.delete_college' in user_permissions %}
+                <td><a href="{% url 'OnlineApp:edit_student' college.id student.id %}">Edit</a> |
+                    <a href="{% url 'OnlineApp:delete_student' college.id student.id %}">Delete</a></td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

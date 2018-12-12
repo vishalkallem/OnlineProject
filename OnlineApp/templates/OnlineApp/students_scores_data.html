@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students Marks</title>
+    {% load static %}
+    <link rel="stylesheet" type=text/css href="{% static 'OnlineApp/style.css' %}" />
+</head>
+<body>
+    <table cellpadding="5px">
+        <caption><b>Students Data</b></caption>
+        <tr>
+            <th>Student Name</th>
+            <th>Email Id</th>
+            <th>Acronym</th>
+            <th>Total</th>
+        </tr>
+        {% for student in students_data %}
+        <tr>
+            <td> {{ student.name }} </td>
+            <td> {{ student.email }} </td>
+            <td> {{ student.college__acronym }} </td>
+            <td> <button onclick="this.innerHTML='{{ student.mocktest1__total }}';">Get Total</button> </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

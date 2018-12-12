@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Colleges Data</title>
+    {% load static %}
+    <link rel="stylesheet" type=text/css href="{% static 'OnlineApp/style.css' %}" />
+</head>
+<body>
+    <table cellpadding="5px">
+        <caption><b>College Data</b></caption>
+        <tr>
+            <th>College Name</th>
+            <th>Acronym</th>
+        </tr>
+        {% for college in colleges_data %}
+        <tr>
+            <td> {{ college.name }} </td>
+            <td> {{ college.acronym }} </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

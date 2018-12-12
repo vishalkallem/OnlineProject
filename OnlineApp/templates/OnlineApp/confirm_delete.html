@@ -1,0 +1,15 @@
+{% extends 'OnlineApp/_base.html' %}
+
+
+<head>
+    <title>Delete {{ object }}</title>
+</head>
+
+{% block content %}
+    <div class="centered">
+        <form method="post">{% csrf_token %}
+            <p style="font-size: 30px">Are you sure you want to delete "{{ object }}"?</p>
+            <input type="submit" class="btn btn-success" value="Confirm"/>
+        </form>
+    </div>
+{% endblock %}
