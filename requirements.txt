@@ -45,7 +45,7 @@ pyparsing==2.2.0
 pypiwin32==223
 pytest==3.6.1
 pytz==2018.4
-pywin32==223
+pywin32==301
 requests==2.19.0
 simplegeneric==0.8.1
 six==1.11.0
